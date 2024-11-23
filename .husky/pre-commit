@@ -1,0 +1,16 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx lint-staged
+
+if ! npx prettier . --check; then
+	echo "Formatting issues detected, please fix them before running \`git commit\`" 1>&2
+	echo "Your changes were NOT committed" 1>&2
+	exit 1
+fi
+
+if ! npx markdownlint-cli2 "blog/**/*.md" "docs/**/*.md"; then
+	echo "Formatting issues detected, please fix them before running \`git commit\`" 1>&2
+	echo "Your changes were NOT committed" 1>&2
+        exit 1
+fi
