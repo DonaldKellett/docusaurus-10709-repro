@@ -275,7 +275,7 @@ const sidebars = {
             "kubernetes/install-rabbitmq-on-kubernetes",
             "kubernetes/install-falco",
             "kubernetes/sigstore-policy-controller-custom-https-registry",
-            //"kubernetes/redmine-k8s",
+            "kubernetes/redmine-k8s",
           ],
         },
         {
